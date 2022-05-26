@@ -26,13 +26,11 @@ public:
 		UCameraComponent* CameraComp;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Player")
-		UStaticMesh* MeshComp;
+		UStaticMeshComponent* MeshComp;
 
 
 
 protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
 
 	void MoveForward(float value);
 	void MoveRight(float value);
@@ -40,10 +38,10 @@ protected:
 	void LookUpAtRate(float value);
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Camera")
-	float BaseTurnRate();
+	float BaseTurnRate;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Camera")
-	float BaseLookUpRate();
+	float BaseLookUpRate;
 
 public:	
 	// Called to bind functionality to input
