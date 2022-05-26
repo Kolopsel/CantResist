@@ -7,7 +7,7 @@
 AMyCharacter::AMyCharacter()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.bCanEverTick = false;
 
 }
 
@@ -18,10 +18,23 @@ void AMyCharacter::BeginPlay()
 	
 }
 
-// Called every frame
-void AMyCharacter::Tick(float DeltaTime)
+void AMyCharacter::MoveForward(float value)
 {
-	Super::Tick(DeltaTime);
+
+}
+
+void AMyCharacter::MoveRight(float value)
+{
+
+}
+
+void AMyCharacter::TurnAtRate(float value)
+{
+
+}
+
+void AMyCharacter::LookUpAtRate(float value)
+{
 
 }
 
