@@ -31,22 +31,36 @@ AMyCharacter::AMyCharacter()
 
 void AMyCharacter::MoveForward(float value)
 {
+	if ((Controller) && (value != 0.0f)) // Valid Controller & User is pressing something
+	{
+		const FRotator Rotation = Controller->GetControlRotation();
+		const FRotator YawRotation(0, Rotation.Yaw, 0);
 
+		const FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
+		AddMovementInput(Direction, value);
+	}
 }
 
 void AMyCharacter::MoveRight(float value)
 {
+	if ((Controller) && (value != 0.0f)) // Valid Controller & User is pressing something
+	{
+		const FRotator Rotation = Controller->GetControlRotation();
+		const FRotator YawRotation(0, Rotation.Yaw, 0);
 
+		const FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
+		AddMovementInput(Direction, value);
+	}
 }
 
 void AMyCharacter::TurnAtRate(float value)
 {
-
+	AddControllerYawInput(value * BaseTurnRate * GetWorld()->GetDeltaSeconds());
 }
 
 void AMyCharacter::LookUpAtRate(float value)
 {
-
+	AddControllerYawInput(value * BaseLookUpRate * GetWorld()->GetDeltaSeconds());
 }
 
 // Called to bind functionality to input

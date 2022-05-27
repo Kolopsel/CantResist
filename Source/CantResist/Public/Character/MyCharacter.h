@@ -37,10 +37,10 @@ protected:
 	void TurnAtRate(float value);
 	void LookUpAtRate(float value);
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Camera")
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Camera")
 	float BaseTurnRate;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Camera")
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Camera")
 	float BaseLookUpRate;
 
 public:	
